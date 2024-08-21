@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #2b2b2b;
+    background-color: #1a1a1a;
     color: #ffffff;
     font-family: 'Anonymous Pro', monospace;
     display: flex;
@@ -13,21 +13,36 @@ body {
     align-items: center;
     height: 100vh;
     overflow: hidden;
-    cursor: url('images/cursor.png'), auto; 
-    animation: backgroundColorChange 20s infinite alternate; 
+    cursor: url('images/cursor.png'), auto;
+    animation: backgroundColorChange 20s infinite alternate;
+    position: relative;
+}
+
+.background-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 90%;
+    background-color: rgba(255, 0, 0, 0.3);
+    box-shadow: 0 0 20px 5px rgba(255, 0, 0, 0.7);
+    z-index: 0;
 }
 
 .container {
     text-align: center;
     animation: containerFloat 10s infinite alternate ease-in-out;
+    z-index: 1;
 }
 
 
 .logo .binarycodee {
     font-family: 'Ancient', serif;
     font-size: 80px;
-    color: #4c4c4c;
+    color: #8b0000;
     animation: rotateLogo 20s linear infinite, logoPulse 5s infinite alternate ease-in-out;
+    text-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
 }
 
 
@@ -35,6 +50,8 @@ body {
     font-family: 'Ancient', serif;
     font-size: 48px;
     animation: textGlow 3s ease-in-out infinite alternate, textMove 7s infinite alternate ease-in-out;
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(255, 0, 0, 1);
 }
 
 
@@ -42,12 +59,16 @@ body {
     font-size: 18px;
     margin-top: 10px;
     animation: moveUpDown 5s infinite alternate ease-in-out;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
 }
 
 
 .contact {
     margin-top: 50px;
     animation: skewed 8s infinite alternate ease-in-out;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
 }
 
 
@@ -75,8 +96,9 @@ body {
 .footer {
     font-size: 12px;
     margin-top: 30px;
-    color: #6d6d6d;
+    color: #a52a2a;
     animation: glowFooter 5s infinite alternate, fadeInOut 10s infinite alternate;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
 }
 
 
@@ -91,8 +113,8 @@ body::after {
 }
 
 @keyframes textGlow {
-    from { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff; }
-    to { text-shadow: 0 0 20px #fff, 0 0 30px #ff00ff, 0 0 40px #ff00ff; }
+    from { text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000; }
+    to { text-shadow: 0 0 20px #ff0000, 0 0 30px #ff4500, 0 0 40px #ff4500; }
 }
 
 @keyframes moveUpDown {
@@ -124,7 +146,7 @@ body::after {
 
 @keyframes glowFooter {
     0% { text-shadow: none; }
-    100% { text-shadow: 0 0 10px #ffffff; }
+    100% { text-shadow: 0 0 10px #ff0000; }
 }
 
 @keyframes containerFloat {
@@ -148,6 +170,6 @@ body::after {
 }
 
 @keyframes backgroundColorChange {
-    0% { background-color: #2b2b2b; }
-    100% { background-color: #1a1a1a; }
+    0% { background-color: #1a1a1a; }
+    100% { background-color: #000000; }
 }
